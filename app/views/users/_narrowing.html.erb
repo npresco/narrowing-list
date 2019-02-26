@@ -1,0 +1,24 @@
+<div>
+  <%== pagy_bulma_nav(@pagy) %>
+</div>
+
+<table data-controller="sort"
+       data-sort-url="/sort"
+       data-sort-query="<%= @input %>"
+       data-sort-field=""
+       data-sort-dir=""
+       class="table is-fullwidth">
+  <thead>
+    <th data-action="click->sort#toggleId"
+        data-target="sort.id"> Id </th>
+
+    <th data-action="click->sort#toggleFirstName"
+        data-target="sort.firstname"> First Name </th>
+
+    <th data-action="click->sort#toggleLastName"
+        data-target="sort.lastname"> Last Name </th>
+  </thead>
+  <tbody data-target="sort.output">
+    <%= render partial: "users" %>
+  </tbody>
+</table>

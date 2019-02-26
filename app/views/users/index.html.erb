@@ -1,0 +1,33 @@
+<style>
+  .idHeader {
+    display: none;
+  }
+
+  .idHeader.slide--current {
+    display: inherit;
+  }
+</style>
+
+<div class="section">
+  <div class="columns is-centered">
+    <div class="column">
+      <div data-controller="narrowing" 
+           data-narrowing-url="/search">
+        <div class="field">
+          <div class="control">
+            <input data-action="keyup->narrowing#search"
+                   data-target="narrowing.input"
+                   class="input is-large"
+                   type="text"
+                   placeholder="Search"
+                   value="<%= @input %>" />
+          </div>
+        </div>
+
+        <div data-target="narrowing.output">
+          <%= render partial: "narrowing" %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
